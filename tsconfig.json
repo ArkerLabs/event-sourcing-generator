@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "declaration": true,
+      "noImplicitAny": false,
+      "removeComments": true,
+      "noLib": false,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "target": "es6",
+      "sourceMap": false,
+      "outDir": "./dist",
+      "rootDir": "./lib",
+      "baseUrl": "./",
+      "skipLibCheck": true,
+      "resolveJsonModule": true
+    },
+    "include": ["lib", "lib/templates/**/*.json"],
+    "exclude": ["node_modules", "**/*.spec.ts", "lib/**/**/files/*.ts"]
+  }
