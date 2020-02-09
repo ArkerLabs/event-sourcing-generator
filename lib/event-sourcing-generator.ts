@@ -2,11 +2,14 @@
 import * as program from 'commander';
 import { Generator } from './generator';
 
-const generate = async (type: 'command'|'event', domain: string, name: string): Promise<void> => {
+const generate = async (type: 'command'|'event'|'query', domain: string, name: string): Promise<void> => {
     const generator = new Generator();
     if (type === 'command') {
         await generator.generate('command', domain, name);
         await generator.generate('command-handler', domain, name);
+    } else if (type === 'query') {
+        await generator.generate('query', domain, name);
+        await generator.generate('query-handler', domain, name);
     } else {
         await generator.generate('event', domain, name);
         await generator.generate('event-handler', domain, name);
@@ -17,10 +20,10 @@ const generate = async (type: 'command'|'event', domain: string, name: string): 
 
 (async () => {
     program
-        .version('1.0.0')
+        .version('1.0.1')
         .description("A CLI for generating classes for CQRS + ES for NestJS")
-        .requiredOption('-t, --type <type>', '[command|event]', (value, previous) => {
-            if (value !== 'command' && value !== 'event') {
+        .requiredOption('-t, --type <type>', '[command|event|query]', (value, previous) => {
+            if (value !== 'command' && value !== 'event' && value !== 'query') {
                 throw new Error('Type not valid');
             }
             return value;

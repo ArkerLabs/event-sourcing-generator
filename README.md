@@ -10,7 +10,7 @@ This cli works for [this](https://github.com/ArkerLabs/event-sourcing-nestjs) ev
 
   -V, --version           output the version number
 
-  -t, --type <type>       [command|event]
+  -t, --type <type>       [command|event|query]
 
   -n, --classname <name>  Name
 
@@ -34,6 +34,11 @@ es-generator -t command -d users -n CreateUser
 ### Generate event
 ```bash
 es-generator -t event -d users -n UserCreated
+```
+
+### Generate query
+```bash
+es-generator -t query -d users -n GetUsers
 ```
 
 ## Help
