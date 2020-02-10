@@ -10,13 +10,13 @@ This cli works for [this](https://github.com/ArkerLabs/event-sourcing-nestjs) ev
 
   -V, --version           output the version number
 
-  -t, --type <type>       [command|event|query]
+  -t, --type \<type\>       [command|event|query]
 
-  -n, --classname <name>  Name
+  -n, --classname \<name\>  Name
 
-  -d, --domain <name>     Specify domain name
+  -d, --domain \<name\>     Specify domain name
 
-  -o, --output <dir>      Output directory (default: ".")
+  -o, --output \<dir\>      Output directory (default: ".")
 
   -h, --help              output usage information
 
