@@ -10,6 +10,7 @@ export class Generator {
         templateName: string, 
         domain: string,
         name: string, 
+        output: string,
         args?: { [key: string]: string; },
     ): Promise<void> {
         const className = this.className(name);
@@ -25,8 +26,12 @@ export class Generator {
             const content = fs.readFileSync(templateFolder + 'files/' + template, 'utf8')
                                 .replace(/%name%/g, fileName)
                                 .replace(/%className%/g, className);
-            this.createFile(domainName + '/' + config.path + '/', template.replace('__name__', fileName), content);
+            this.createFile(this.getOutputDirectory(output) + domainName + '/' + config.path + '/', template.replace('__name__', fileName), content);
         }
+    }
+
+    private getOutputDirectory(output: string): string {
+        return output.endsWith('/') ? output : output + '/';
     }
 
     private createFile(filePath: string, fileName: string, contents: string) {

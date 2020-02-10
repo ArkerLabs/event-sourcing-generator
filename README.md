@@ -16,6 +16,8 @@ This cli works for [this](https://github.com/ArkerLabs/event-sourcing-nestjs) ev
 
   -d, --domain <name>     Specify domain name
 
+  -o, --output <dir>      Output directory (default: ".")
+
   -h, --help              output usage information
 
 
