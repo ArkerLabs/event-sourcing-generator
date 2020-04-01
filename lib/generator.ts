@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
+
 import { TemplateConfig } from './template-config';
 
 export class Generator {
@@ -18,7 +19,7 @@ export class Generator {
         const domainName = this.fileName(domain);
         const templateFolder = this.getTemplateFolder(templateName);
 
-        var config: TemplateConfig = JSON.parse(fs.readFileSync(templateFolder + 'config.json', 'utf8'));
+        const config: TemplateConfig = JSON.parse(fs.readFileSync(templateFolder + 'config.json', 'utf8'));
 
         const templates = fs.readdirSync(templateFolder + 'files');
 
