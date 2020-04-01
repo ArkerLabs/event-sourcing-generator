@@ -1,0 +1,6 @@
+{
+  "watch": ["lib"],
+  "ext": "ts",
+  "ignore": ["lib/**/*.spec.ts", "lib/templates"],
+  "exec": "ts-node ./lib/event-sourcing-generator.ts"
+}
