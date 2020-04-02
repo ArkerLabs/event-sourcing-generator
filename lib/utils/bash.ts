@@ -13,6 +13,7 @@ export const bashCommand = async (
       cwd: process.cwd()
     });
     
+    console.log(process.cwd());
     console.log("calling "+ command + "with args " + args);
     
     if (collect) {
