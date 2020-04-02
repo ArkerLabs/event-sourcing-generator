@@ -4,16 +4,15 @@ import * as path from 'path';
 
 import { bashCommand } from './bash';
 import { config, getConfigForSchematic } from './config.store';
+import { resolve, join } from 'path';
+import { existsSync } from 'fs';
 
 export const generateCommands = async (program: commander.Command) => {
   //todo cambiar al binario de node modules
   const result = await bashCommand(
-    `../../node_modules/@angular-devkit/schematics-cli/bin/schematics.js ../../node_modules/${config.get(
-      'collection',
-    )}:.`,
+    `${getSchematicsBinary()} ${join(__dirname, "../../node_modules/" + config.get('collection'))}:.`,
     ['--list-schematics'],
     true,
-    __dirname,
   );
 
   const schematics: string[] = result.toString().split('\n');
@@ -62,12 +61,9 @@ export const generateCommands = async (program: commander.Command) => {
       allArgs.push(...args);
 
       await bashCommand(
-        `../../node_modules/@angular-devkit/schematics-cli/bin/schematics.js ../../node_modules/${config.get(
-          'collection',
-        )}:${schematic}`,
+        `${getSchematicsBinary()} ${join(__dirname, "../../node_modules/" + config.get('collection'))}:${schematic}`,
         allArgs,
-        false,
-        __dirname,
+        false
       );
     });
   });
@@ -84,4 +80,16 @@ export function parseCommandOptions(options: any): string[] {
   }
 
   return args;
+}
+
+export function getSchematicsBinary() {
+  const subPath = join('.bin', 'schematics');
+  for (const path of module.paths) {
+    const binaryPath = resolve(path, subPath);
+    if (existsSync(binaryPath)) {
+      return binaryPath;
+    }
+  }
+
+  throw new Error('Could not find the schematics cli');
 }
