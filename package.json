@@ -1,6 +1,6 @@
 {
   "name": "event-sourcing-generator",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Utils for generating CQRS + Event Sourcing classes for NestJS",
   "main": "dist/index.js",
   "scripts": {
