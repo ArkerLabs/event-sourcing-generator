@@ -13,6 +13,8 @@ export const bashCommand = async (
       cwd: process.cwd()
     });
     
+    console.log("calling "+ command + "with args " + args);
+    
     if (collect) {
       child.stdout.on('data', data =>
         resolve(data.toString()),
@@ -23,7 +25,7 @@ export const bashCommand = async (
       if (code === 0) {
         resolve(null);
       } else {
-        console.error(chalk.red('bad'));
+        console.error(chalk.red('error: code '+ code));
         reject();
       }
     });
