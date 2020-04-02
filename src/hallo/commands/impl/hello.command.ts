@@ -1,3 +1,0 @@
-export class HelloCommand {
-    constructor() {}
-}
