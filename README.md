@@ -2,6 +2,8 @@ Event Sourcing generator for Nestjs
 =====
 [![npm version](https://badge.fury.io/js/event-sourcing-generator.svg)](https://badge.fury.io/js/event-sourcing-generator)
 
+![Schematics CI](https://github.com/ArkerLabs/event-sourcing-generator/workflows/Schematics%20CI/badge.svg)
+
 A CLI for generating classes for CQRS + ES for NestJS.
 
 This cli works for [this](https://github.com/ArkerLabs/event-sourcing-nestjs) event sourcing library.

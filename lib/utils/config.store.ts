@@ -19,6 +19,12 @@ export const config = new configStore(packageJson.name, {
     },
     spec: { type: 'boolean', value: true, description: 'Create a spec file.' },
   },
+  query: {
+    spec: { type: 'boolean', value: true, description: 'Create a spec file.' },
+  },
+  command: {
+    spec: { type: 'boolean', value: true, description: 'Create a spec file.' },
+  },
 });
 
 export function getConfigForSchematic(schematic: string) {

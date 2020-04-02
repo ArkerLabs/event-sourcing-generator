@@ -20,7 +20,7 @@ export function createConfigCommand(program: commander.Command) {
 
       const schematicConfigCmd = program.command(`${schematic}`);
 
-      schematicConfigCmd.action(async cmd => {
+      schematicConfigCmd.action(async () => {
         const questions = [];
         for (const option in options) {
           if (options.hasOwnProperty(option)) {
@@ -43,32 +43,6 @@ export function createConfigCommand(program: commander.Command) {
     }
   }
 }
-
-export const configAction = (commandObj: any) => {
-  if (commandObj.list) {
-    console.log(chalk.blue('ES-GENERATOR CONFIG'));
-    config.all;
-    console.log(prettyjson.render(config.all, { noColor: true }));
-  }
-
-  if (
-    commandObj.autoEventUpdater === 'true' ||
-    commandObj.autoEventUpdater === 'false'
-  ) {
-    config.set('autoEventUpdater', commandObj.autoEventUpdater);
-  }
-
-  if (
-    commandObj.autoEventHandler === 'true' ||
-    commandObj.autoEventHandler === 'false'
-  ) {
-    config.set('autoEventUpdater', commandObj.autoEventUpdater);
-  }
-
-  if (commandObj.collection) {
-    config.set('collection', commandObj.collection);
-  }
-};
 
 function prettyPrintConfigValues() {
   console.log(chalk.blue('CONFIG'));

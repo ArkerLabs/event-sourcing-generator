@@ -7,9 +7,7 @@ import { config, getConfigForSchematic } from './config.store';
 export const generateCommands = async (program: commander.Command) => {
   //todo cambiar al binario de node modules
   const result = await bashCommand(
-    `./node_modules/@angular-devkit/schematics-cli/bin/schematics.js ${config.get(
-      'collection',
-    )}:.`,
+    `./node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/${config.get('collection')}:.`,
     ['--list-schematics'],
     true,
   );
@@ -34,23 +32,28 @@ export const generateCommands = async (program: commander.Command) => {
       });
 
     const cmd = program.command(`${schematic} ${optionString}`);
-
+      cmd.description(schema["description"]);
     const options = getConfigForSchematic(schematic);
 
     const args: string[] = parseCommandOptions(options);
     Object.keys(properties).forEach(key => {
       cmd.option('--' + key, properties[key].description);
     });
+    cmd.option("--dry-run", "Run the schematic without merging it with the current file tree.", false);
 
-
-    cmd.action(async (name:string, module:string) => {
+    cmd.action(async (name:string, module:string, cmd) => {
+        if(!cmd.dryRun){
+            args.push("--debug=false");
+        }
+        
         const allArgs = [];
         allArgs.push(name);
         allArgs.push(module);
         allArgs.push(...args);
         
+
       await bashCommand(
-        `./node_modules/@angular-devkit/schematics-cli/bin/schematics.js ${config.get('collection')}:${schematic}`,
+        `./node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/${config.get('collection')}:${schematic}`,
         allArgs,
       );
     });

@@ -4,7 +4,6 @@
   "description": "Utils for generating CQRS + Event Sourcing classes for NestJS",
   "main": "dist/index.js",
   "scripts": {
-    "preinstall": "npm i -g @arkerlabs/es-schematics",
     "build": "rm -rf dist && tsc ",
     "clean": "gulp clean:bundle",
     "create": "npm run build && npm run test",

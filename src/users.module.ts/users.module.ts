@@ -1,5 +1,0 @@
-
-@Module({
-
-})
-export class UsersModule {}
