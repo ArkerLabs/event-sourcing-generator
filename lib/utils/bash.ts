@@ -5,16 +5,19 @@ export const bashCommand = async (
   command: string,
   args: string[],
   collect = false,
+  cwd = process.cwd()
 ) => {
   return new Promise<null | string>((resolve, reject) => {
+        
+    console.log(cwd);
+    console.log("calling "+ command + "with args " + args);
+
     const child: ChildProcess = spawn(command, args, {
       shell: true,
       stdio: collect ? 'pipe' : 'inherit',
-      cwd: process.cwd()
+      cwd: cwd
     });
-    
-    console.log(process.cwd());
-    console.log("calling "+ command + "with args " + args);
+
     
     if (collect) {
       child.stdout.on('data', data =>

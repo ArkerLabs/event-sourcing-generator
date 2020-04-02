@@ -7,9 +7,11 @@ import { config, getConfigForSchematic } from './config.store';
 export const generateCommands = async (program: commander.Command) => {
   //todo cambiar al binario de node modules
   const result = await bashCommand(
-    `./node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/${config.get('collection')}:.`,
+    `../../node_modules/@angular-devkit/schematics-cli/bin/schematics.js ../../node_modules/${config.get('collection')}:.`,
     ['--list-schematics'],
     true,
+    __dirname
+
   );
 
   const schematics: string[] = result.toString().split('\n');
