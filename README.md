@@ -7,7 +7,6 @@ Create common class structures needed in the event-sourcing-nestjs package https
 ## ⭐️ Install
 ```
 $ npm install -g event-sourcing-generator
-
 ```
 
 ## 📖 Basic Usage

@@ -15,13 +15,13 @@ const pkgJson = require('../package.json');
     .version(pkgJson.version);
   
   program.command("info").alias("i").description("Show CLI Info.").action(helpAction);
+
   const configCommand = new commander.Command('config').action(() =>
     configCommand.outputHelp(),
   );
-
+  createConfigCommand(configCommand);
   program.addCommand(configCommand);
 
-  createConfigCommand(configCommand);
   await generateCommands(program);
 
   await program.parseAsync(process.argv);
