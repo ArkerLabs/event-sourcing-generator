@@ -28,11 +28,11 @@ jobs:
     - run: npm run build --if-present
     - run: git config --global user.email "edu@arkerlabs.com"
     - run: git config --global user.name "Eduardo Simón"
-    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-      env:
-        NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-    - run: npm run release -- --ci  --verbose
+
+    - run: npm run release
       env: 
         CI: true
         GITHUB_TOKEN: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
+        GH_TOKEN: ${{secrets.GH_TOKEN}}
         NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+        

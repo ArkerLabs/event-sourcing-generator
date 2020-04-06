@@ -13,14 +13,14 @@
     "prepublish:npm": "npm run build",
     "publish:npm": "npm publish --access public",
     "test": "sudo npm i -g && es-generator -h",
-    "release": "release-it"
+    "release": "semantic-release"
   },
   "bin": {
     "es-generator": "./dist/event-sourcing-generator.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arkerlabs/event-sourcing-generator.git"
+    "url": "https://github.com/arkerlabs/event-sourcing-generator.git"
   },
   "keywords": [
     "es",
@@ -63,7 +63,8 @@
     "release-it": "^13.5.1",
     "husky": "^4.2.3",
     "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4"
+    "@commitlint/config-conventional": "^8.3.4",
+    "semantic-release": "^17.0.4"
   },
   "husky": {
     "hooks": {
