@@ -1,10 +1,11 @@
 import chalk = require('chalk');
 import commander = require('commander');
 import inquirer = require('inquirer');
-import { config } from '../utils/config.store';
 import path = require('path');
-import { prettyPrintConfigValues } from '../utils/config-printer';
+
 import { getLibPath } from '../utils/bin-utils';
+import { prettyPrintConfigValues } from '../utils/config-printer';
+import { config } from '../utils/config.store';
 
 export function createConfigCommand(program: commander.Command) {
   const listCmd = new commander.Command('list')
@@ -48,6 +49,7 @@ export function createConfigCommand(program: commander.Command) {
         const response = await inquirer.prompt(questions);
 
         for (const option in response) {
+          
           if (
             schematic === 'collection' && option === "name" &&
             config.all[schematic] &&
