@@ -15,6 +15,7 @@
     "test": "sudo npm i -g && es-generator -h",
     "release": "semantic-release"
   },
+  "private": false,
   "bin": {
     "es-generator": "./dist/event-sourcing-generator.js"
   },
@@ -60,7 +61,6 @@
     "nodemon": "^2.0.2",
     "ts-node": "^8.8.1",
     "typescript": "^3.8.3",
-    "release-it": "^13.5.1",
     "husky": "^4.2.3",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
@@ -70,5 +70,13 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
   }
 }
