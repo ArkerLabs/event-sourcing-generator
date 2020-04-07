@@ -1,7 +1,7 @@
 # ✨ Event Sourcing Generator  
 Create common class structures needed in the event-sourcing-nestjs package https://www.npmjs.com/package/event-sourcing-nestjs
 
-[![](https://badgen.net/npm/v/event-sourcing-generator)](https://www.npmjs.com/package/event-sourcing-generator) ![](https://badgen.net/npm/license/event-sourcing-generator) ![](https://badgen.net/bundlephobia/min/event-sourcing-generator) ![](https://badgen.net/npm/dt/event-sourcing-generator) ![Schematics CI](https://github.com/ArkerLabs/event-sourcing-generator/workflows/Schematics%20CI/badge.svg)
+[![](https://badgen.net/npm/v/event-sourcing-generator)](https://www.npmjs.com/package/event-sourcing-generator) ![](https://badgen.net/npm/license/event-sourcing-generator) ![](https://badgen.net/bundlephobia/min/event-sourcing-generator) ![](https://badgen.net/npm/dt/event-sourcing-generator) ![Schematics CI](https://github.com/ArkerLabs/event-sourcing-generator/workflows/Schematics%20CI/badge.svg) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 
 ## ⭐️ Install
