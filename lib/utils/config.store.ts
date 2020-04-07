@@ -4,7 +4,8 @@ import configStore = require('configstore');
 const packageJson = require('../../package.json');
 
 export const config = new configStore(packageJson.name, {
-  collection: {
+  collection: {  
+    
     description: 'Specifies the default schematics collection to use.',
     name: {
       type: 'string',
