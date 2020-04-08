@@ -3,8 +3,7 @@
 
 name: Event-sourcing-generator CI
 
-on:
-  pull_request
+on: pull_request
 
 jobs:
   build:
