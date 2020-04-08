@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/arkerlabs/event-sourcing-generator/compare/v2.0.0...v2.1.0) (2020-04-07)
+
+
+### Features
+
+* 🎸 Add event parent class and aggregate field ([5d360c5](https://github.com/arkerlabs/event-sourcing-generator/commit/5d360c5e6e59e286e6e13fb94358683079c46267)), closes [#3](https://github.com/arkerlabs/event-sourcing-generator/issues/3)
+
 # [2.0.0](https://github.com/arkerlabs/event-sourcing-generator/compare/v1.1.3...v2.0.0) (2020-04-07)
 
 
