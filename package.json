@@ -38,7 +38,7 @@
   "homepage": "https://github.com/arkerlabs/event-sourcing-generator#readme",
   "dependencies": {
     "@angular-devkit/schematics-cli": "^0.901.0",
-    "@arkerlabs/es-schematics": "^2.1.0",
+    "@arkerlabs/es-schematics": "^2.1.1",
     "chalk": "^3.0.0",
     "clear": "^0.1.0",
     "commander": "^5.0.0",
