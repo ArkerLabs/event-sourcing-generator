@@ -8,6 +8,6 @@ export const helpAction = () => {
 
   console.log(logo);
   console.log('\n');
-  console.log(chalk.magenta("Made with 💙 by ArkerLabs."));
+  console.log(chalk.magenta("Made with 💙 by ArkerLabs and Eduardo Simón."));
 
 };
